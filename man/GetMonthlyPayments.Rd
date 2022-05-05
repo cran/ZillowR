@@ -4,22 +4,27 @@
 \alias{GetMonthlyPayments}
 \title{Make request to Zillow API GetMonthlyPayments Web Service}
 \usage{
-GetMonthlyPayments(price = NULL, down = NULL, dollarsdown = NULL,
-  zip = NULL, zws_id = getOption("ZillowR-zws_id"),
-  url = "http://www.zillow.com/webservice/GetMonthlyPayments.htm")
+GetMonthlyPayments(
+  price = NULL,
+  down = NULL,
+  dollarsdown = NULL,
+  zip = NULL,
+  zws_id = getOption("ZillowR-zws_id"),
+  url = "http://www.zillow.com/webservice/GetMonthlyPayments.htm"
+)
 }
 \arguments{
 \item{price}{The price of the property for which monthly payment data will be
 calculated. Required.}
 
 \item{down}{The percentage of the total property price that will be placed as
-a down payment. If omitted, a 20% down payment is assumed. If the down
-payment is less than 20%, a monthly private mortgage insurance amount is
+a down payment. If omitted, a 20\% down payment is assumed. If the down
+payment is less than 20\%, a monthly private mortgage insurance amount is
 specified for each returned loan type.}
 
 \item{dollarsdown}{The dollar amount that will be placed as a down payment.
 This amount will be used for the down payment if the 'down' parameter is
-omitted. If the down payment is less than 20% of the purchase price, a
+omitted. If the down payment is less than 20\% of the purchase price, a
 monthly private mortgage insurance amount is specified for each returned
 loan type.}
 
@@ -32,15 +37,15 @@ property tax and hazard insurance data will not be returned.}
 }
 \value{
 A named list with the following elements:
-    \describe{
-        \item{\strong{request}}{a list with the request parameters}
-        \item{\strong{message}}{a list of status code(s) and message(s)
-            returned by the API}
-        \item{\strong{response}}{an XMLNode with the API-specific response
-            values. At this time, no further coercion is performed, so you
-            may have to use functions from the \code{XML} package to extract
-            the desired output.}
-    }
+\describe{
+\item{\strong{request}}{a list with the request parameters}
+\item{\strong{message}}{a list of status code(s) and message(s)
+returned by the API}
+\item{\strong{response}}{an XMLNode with the API-specific response
+values. At this time, no further coercion is performed, so you
+may have to use functions from the \code{XML} package to extract
+the desired output.}
+}
 }
 \description{
 For a specific loan amount, the GetMonthlyPayments API returns the estimated
@@ -56,4 +61,3 @@ GetMonthlyPayments(price = 300000L, down = 10)
 GetMonthlyPayments(price = 300000L, dollarsdown = 10000L)
 GetMonthlyPayments(price = 300000L, zip = 98109)}
 }
-

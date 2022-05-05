@@ -4,9 +4,13 @@
 \alias{GetComps}
 \title{Make request to Zillow API GetComps Web Service}
 \usage{
-GetComps(zpid = NULL, count = NULL, rentzestimate = FALSE,
+GetComps(
+  zpid = NULL,
+  count = NULL,
+  rentzestimate = FALSE,
   zws_id = getOption("ZillowR-zws_id"),
-  url = "http://www.zillow.com/webservice/GetComps.htm")
+  url = "http://www.zillow.com/webservice/GetComps.htm"
+)
 }
 \arguments{
 \item{zpid}{The Zillow Property ID for the property for which to obtain
@@ -24,15 +28,15 @@ default: false).}
 }
 \value{
 A named list with the following elements:
-    \describe{
-        \item{\strong{request}}{a list with the request parameters}
-        \item{\strong{message}}{a list of status code(s) and message(s)
-            returned by the API}
-        \item{\strong{response}}{an XMLNode with the API-specific response
-            values. At this time, no further coercion is performed, so you
-            may have to use functions from the \code{XML} package to extract
-            the desired output.}
-    }
+\describe{
+\item{\strong{request}}{a list with the request parameters}
+\item{\strong{message}}{a list of status code(s) and message(s)
+returned by the API}
+\item{\strong{response}}{an XMLNode with the API-specific response
+values. At this time, no further coercion is performed, so you
+may have to use functions from the \code{XML} package to extract
+the desired output.}
+}
 }
 \description{
 The GetComps API returns a list of comparable recent sales for a specified
@@ -45,4 +49,3 @@ property for which the comparables are being retrieved.
 GetComps(zpid = 48749425, count = 5)
 GetComps(zpid = 48749425, count = 5, rentzestimate = TRUE)}
 }
-

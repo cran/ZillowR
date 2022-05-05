@@ -4,10 +4,15 @@
 \alias{GetChart}
 \title{Make request to Zillow API GetChart Web Service}
 \usage{
-GetChart(zpid = NULL, unit_type = c("percent", "dollar"), width = NULL,
-  height = NULL, chartDuration = c("1year", "5years", "10years"),
+GetChart(
+  zpid = NULL,
+  unit_type = c("percent", "dollar"),
+  width = NULL,
+  height = NULL,
+  chartDuration = c("1year", "5years", "10years"),
   zws_id = getOption("ZillowR-zws_id"),
-  url = "http://www.zillow.com/webservice/GetChart.htm")
+  url = "http://www.zillow.com/webservice/GetChart.htm"
+)
 }
 \arguments{
 \item{zpid}{The Zillow Property ID for the property for which to obtain
@@ -33,15 +38,15 @@ the value defaults to '1year'.}
 }
 \value{
 A named list with the following elements:
-    \describe{
-        \item{\strong{request}}{a list with the request parameters}
-        \item{\strong{message}}{a list of status code(s) and message(s)
-            returned by the API}
-        \item{\strong{response}}{an XMLNode with the API-specific response
-            values. At this time, no further coercion is performed, so you
-            may have to use functions from the \code{XML} package to extract
-            the desired output.}
-    }
+\describe{
+\item{\strong{request}}{a list with the request parameters}
+\item{\strong{message}}{a list of status code(s) and message(s)
+returned by the API}
+\item{\strong{response}}{an XMLNode with the API-specific response
+values. At this time, no further coercion is performed, so you
+may have to use functions from the \code{XML} package to extract
+the desired output.}
+}
 }
 \description{
 The GetChart API generates a URL for an image file that displays historical
@@ -57,4 +62,3 @@ GetChart(zpid = 48749425)
 GetChart(zpid = 48749425, unit_type = 'dollar', width = 600, height = 300,
          chartDuration = '10years')}
 }
-

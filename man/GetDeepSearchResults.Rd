@@ -4,9 +4,13 @@
 \alias{GetDeepSearchResults}
 \title{Make request to Zillow API GetDeepSearchResults Web Service}
 \usage{
-GetDeepSearchResults(address = NULL, citystatezip = NULL,
-  rentzestimate = FALSE, zws_id = getOption("ZillowR-zws_id"),
-  url = "http://www.zillow.com/webservice/GetDeepSearchResults.htm")
+GetDeepSearchResults(
+  address = NULL,
+  citystatezip = NULL,
+  rentzestimate = FALSE,
+  zws_id = getOption("ZillowR-zws_id"),
+  url = "http://www.zillow.com/webservice/GetDeepSearchResults.htm"
+)
 }
 \arguments{
 \item{address}{The address of the property to search. Required.}
@@ -23,15 +27,15 @@ default: false).}
 }
 \value{
 A named list with the following elements:
-    \describe{
-        \item{\strong{request}}{a list with the request parameters}
-        \item{\strong{message}}{a list of status code(s) and message(s)
-            returned by the API}
-        \item{\strong{response}}{an XMLNode with the API-specific response
-            values. At this time, no further coercion is performed, so you
-            may have to use functions from the \code{XML} package to extract
-            the desired output.}
-    }
+\describe{
+\item{\strong{request}}{a list with the request parameters}
+\item{\strong{message}}{a list of status code(s) and message(s)
+returned by the API}
+\item{\strong{response}}{an XMLNode with the API-specific response
+values. At this time, no further coercion is performed, so you
+may have to use functions from the \code{XML} package to extract
+the desired output.}
+}
 }
 \description{
 The GetDeepSearchResults API finds a property for a specified address. The
@@ -46,4 +50,3 @@ GetDeepSearchResults(address = '2114 Bigelow Ave', citystatezip = 'Seattle, WA')
 GetDeepSearchResults(address = '2114 Bigelow Ave', citystatezip = 'Seattle, WA',
                      rentzestimate = TRUE)}
 }
-
